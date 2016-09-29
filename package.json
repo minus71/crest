@@ -6,7 +6,8 @@
         "email": "mario.minutolo@gmail.com"
     },
     "repository": {
-        
+        "type": "git",
+        "url": "git@github.com:minus71/crest.git"
     }
 
 }
