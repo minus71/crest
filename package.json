@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "stats": "webpack --profile --json > stats.json"
   },
   "dependencies": {
     "purecss": "^0.6.0",
