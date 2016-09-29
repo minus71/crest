@@ -1,13 +1,15 @@
 {
-    "name" : "crest",
-    "version": "0.0.1",
-    "author": {
-        "name": "Mario Minutolo",
-        "email": "mario.minutolo@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:minus71/crest.git"
-    }
-
+  "name": "crest",
+  "version": "0.0.1",
+  "author": {
+    "name": "Mario Minutolo",
+    "email": "mario.minutolo@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:minus71/crest.git"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
 }
