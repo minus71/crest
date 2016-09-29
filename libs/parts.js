@@ -1,6 +1,7 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-exports.devServer = function(options) {
+exports.devServer = function (options) {
   return {
     devServer: {
       // Enable history API fallback so HTML5 History API based
@@ -33,6 +34,70 @@ exports.devServer = function(options) {
       new webpack.HotModuleReplacementPlugin({
         multiStep: true
       })
+    ]
+  };
+}
+
+/**
+ * 
+ * CSS section
+ * 
+ */
+
+exports.setupCSS = function (paths) {
+  return {
+    module: {
+      loaders: [
+        {
+          test: /\.css$/,
+          loaders: ['style', 'css'],
+          include: paths
+        }
+      ]
+    }
+  };
+}
+
+
+exports.minify = function () {
+  return {
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        },
+        // Mangling specific options
+        mangle: {
+          // Don't mangle $
+          except: ['$','webpackJsonp'],
+
+          // Don't care about IE8
+          screw_ie8: true,
+
+          // Don't mangle function names
+          // keep_fnames: true
+        }
+      })
+    ]
+  };
+}
+
+exports.extractCSS = function(paths) {
+  return {
+    module: {
+      loaders: [
+        // Extract CSS during build
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract('style', 'css'),
+          include: paths
+        }
+      ]
+    },
+    plugins: [
+      // Output extracted CSS to a file
+      //new ExtractTextPlugin('[name].[chunkhash].css')
+      new ExtractTextPlugin('[name].css')
     ]
   };
 }

@@ -10,8 +10,12 @@
     "url": "git@github.com:minus71/crest.git"
   },
   "devDependencies": {
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "grunt": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
+    "purifycss-webpack-plugin": "^2.0.3",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1",
     "webpack-merge": "^0.14.1",
@@ -20,5 +24,9 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
+  },
+  "dependencies": {
+    "purecss": "^0.6.0",
+    "react": "^15.3.2"
   }
 }
