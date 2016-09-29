@@ -8,9 +8,9 @@ See for yourself.
 ## Tackling with
 
 - npm
-- grunt 
-- require js
+- webpack
+- react
 
  ## WIP
 
-`package.json`  
+Trying to create a webpack project.
